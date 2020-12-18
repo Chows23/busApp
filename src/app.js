@@ -25,7 +25,7 @@ function getStop(key) {
   .then(response => {
     response.json().then(data => {
       let stopsData = data.stops.map(stop =>
-        fetch(`https://api.winnipegtransit.com/v3/stops/${stop.key}/schedule.json?api-key=daPa_bqWLDUioW-C3Jr6&max-results-per-route=2`)
+        fetch(`https://api.winnipegtransit.com/v3/stops/${stop.key}/schedule.json?max-results-per-route=2&api-key=daPa_bqWLDUioW-C3Jr6`)
         .then(response => response.json())
       )
 
