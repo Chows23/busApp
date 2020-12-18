@@ -29,18 +29,15 @@ function getStop(key) {
         .then(response => response.json())
       )
 
-      Promise.all(stopsData).then(data => {
-        data.forEach(item => {
-          let schedule = item['stop-schedule'].stop;
-          let name = schedule.street.name;
-          let crossStreet = schedule['cross-street']['name'];
-          let direction = schedule.direction;
-          let routeSchedules = item['stop-schedule']['route-schedules'];
-          routeSchedules.forEach(item => {
-            let busNumber = item['route']['key'];
-            let stops = item['scheduled-stops'];
+      Promise.all(stopsData)
+      .then(data => {
+        data.forEach(currentData => {
+          let schedule = currentData['stop-schedule'].stop;
+          let routeSchedules = currentData['stop-schedule']['route-schedules'];
+          routeSchedules.forEach(currentData => {
+            let stops = currentData['scheduled-stops'];
             stops.forEach(stop => {
-			        createBusStops(name, crossStreet, direction, busNumber, stop.times.arrival.scheduled);
+			        createBusStops(schedule.street.name, schedule['cross-street']['name'], schedule.direction, currentData['route']['key'], stop.times.arrival.scheduled);
 		      	})
           })
         })
@@ -49,7 +46,7 @@ function getStop(key) {
   })
 };
 
-function createStreets(name, key){
+function createStreets(name, key) {
   streetListElement.insertAdjacentHTML('beforeend',
     `<a href="#" data-street-key="${key}">${name}</a>`
   );
