@@ -1,4 +1,6 @@
-# SD105-Assignment-1
+# bus App
+https://nostalgic-villani-1d10c0.netlify.app/#
+
 For this assignment, you will be building a bus schedule search by making use of the [Winnipeg Transit Data API](https://api.winnipegtransit.com/). Sign-up for free access [here](https://api.winnipegtransit.com/).
 
 Next, checkout this [demo of the project](https://mittnexbuss.web.app/).
