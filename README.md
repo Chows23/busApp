@@ -5,10 +5,6 @@ For this assignment, you will be building a bus schedule search by making use of
 
 Next, checkout this [demo of the project](https://mittnexbuss.web.app/).
 
-## Submissions & Due Date
-You will be required to submit a public Github respository URL and a hosted project URL under "Assignment 1 Submission" in myLearning no later than Friday, December 18th @ 11:59 PM.
-
-    Late submissions will not be accepted
 
 ## Set-up
 Get the HTML and CSS starter files for this assignment by cloning this repository:
